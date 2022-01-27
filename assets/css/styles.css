@@ -1,0 +1,113 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--body-color);
+}
+
+.container{
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    background: var(--body-color);
+    padding: 40px 30px 30px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px hsla(var(--hue-color), 10%, 9%),
+                10px 10px 70px hsla(var(--hue-color), 10%, 16%),
+                inset -5px -5px 15px hsla(var(--hue-color), 10%, 7%),
+                inset 5px 5px 15px hsla(var(--hue-color), 10%, 7%);
+}
+
+.calculator{
+    position: relative;
+    display: grid;
+}
+
+.calculator .value{
+    position: relative;
+    grid-column: span 4;
+    height: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: var(--screen-color);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px hsla(var(--hue-color), 10%, 10%);
+    text-align: right;
+    padding: 10px;
+    font-size: var(--normal-font-size);
+}
+
+.calculator span{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+    background: linear-gradient(180deg, hsla(var(--hue-color), 10%, 16%), hsla(var(--hue-color), 10%, 25%));
+    box-shadow: inset -8px 0 8px hsla(var(--hue-color), 10%, 12%),
+                inset 0 -8px 8px hsla(var(--hue-color), 10%, 12%), 
+                0 0 0 2px hsla(var(--hue-color), 10%, 9%),
+                10px 20px 25px hsla(var(--hue-color), 10%, 10%);
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+    font-weight: 400; 
+    border-radius: 10px;         
+}
+
+.calculator span::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    background: linear-gradient(90deg, hsla(var(--hue-color), 10%, 15%), hsla(var(--hue-color), 10%, 25%));;
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(0,0,0,0.1),
+                10px 5px 10px rgba(0,0,0,0.15);
+    border-left: 1px solid hsla(var(--hue-color), 10%, 15%);
+    border-bottom: 1px solid hsla(var(--hue-color), 10%, 15%);
+    border-top: 1px solid hsla(var(--hue-color), 10%, 9%);            
+}
+
+.calculator span:active{
+    filter: brightness(1.5);
+}
+
+.calculator span i{
+    position: relative;
+    font-size: var(--smaller-font-size);
+    text-transform: uppercase;
+
+}
+
+.calculator .clear{
+    grid-column: span 2;
+    width: 182px;
+    background: #f00;
+} 
+
+.calculator .clear::before{
+    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+.calculator .plus{
+    grid-row: span 2;
+    height: 180px;
+}
