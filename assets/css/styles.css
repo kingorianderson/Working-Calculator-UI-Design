@@ -1,5 +1,23 @@
+/*** GOOGLE FONTS ***/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
-* {
+/*** VARIABLES CSS ***/
+:root {
+  /*** Colors ***/
+  --hue-color: 240;
+
+  --body-color: hsl(var(--hue-color), 10%, 16%);
+  --screen-color: hsl(69, 24%, 59%);
+  --key-number-color: hsl(var(--hue-color), 0%, 100%);
+
+  /*** Font and typography ***/
+  --body-font: 'Poppins', sans-serif;
+  --screen-font-size: 2em;
+  --key-number-font-size: 1.5em;
+  
+}
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,9 +40,9 @@ body{
     padding: 40px 30px 30px;
     border-radius: 20px;
     box-shadow: 25px 25px 75px hsla(var(--hue-color), 10%, 9%),
-                10px 10px 70px hsla(var(--hue-color), 10%, 16%),
+                10px 10px 70px hsla(var(--hue-color), 10%, 9%),
                 inset -5px -5px 15px hsla(var(--hue-color), 10%, 7%),
-                inset 5px 5px 15px hsla(var(--hue-color), 10%, 7%);
+                inset 5px 5px 15px hsla(var(--hue-color), 10%, 50%);
 }
 
 .calculator{
@@ -36,16 +54,17 @@ body{
     position: relative;
     grid-column: span 4;
     height: 100px;
-    width: 100%;
+    left: 10px;
+    width: calc(100% - 20px);
     border: none;
     outline: none;
     background: var(--screen-color);
     margin-bottom: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 0 2px hsla(var(--hue-color), 10%, 10%);
+    box-shadow: 0 0 0 2px hsla(var(--hue-color), 10%, 9%);
     text-align: right;
     padding: 10px;
-    font-size: var(--normal-font-size);
+    font-size: var(--screen-font-size);
 }
 
 .calculator span{
@@ -55,12 +74,14 @@ body{
     width: 80px;
     height: 80px;
     margin: 8px;
-    background: linear-gradient(180deg, hsla(var(--hue-color), 10%, 16%), hsla(var(--hue-color), 10%, 25%));
-    box-shadow: inset -8px 0 8px hsla(var(--hue-color), 10%, 12%),
+    background: linear-gradient(90deg, hsla(var(--hue-color), 10%, 20%), hsla(var(--hue-color), 10%, 20%));
+    box-shadow: inset -8px 0 8px hsla(var(--hue-color), 10%, 10%),
                 inset 0 -8px 8px hsla(var(--hue-color), 10%, 12%), 
+                inset 8px 0 8px hsla(var(--hue-color), 10%, 40%),
+                inset 0 8px 8px hsla(var(--hue-color), 10%, 40%), 
                 0 0 0 2px hsla(var(--hue-color), 10%, 9%),
                 10px 20px 25px hsla(var(--hue-color), 10%, 10%);
-    color: #fff;
+    color: var(--key-number-color);
     user-select: none;
     cursor: pointer;
     font-weight: 400; 
@@ -74,13 +95,15 @@ body{
     left: 4px;
     bottom: 14px;
     right: 12px;
-    background: linear-gradient(90deg, hsla(var(--hue-color), 10%, 15%), hsla(var(--hue-color), 10%, 25%));;
+    background: linear-gradient(90deg, hsla(var(--hue-color), 10%, 12%), hsla(var(--hue-color), 10%, 40%));;
     border-radius: 10px;
-    box-shadow: -5px -5px 15px rgba(0,0,0,0.1),
-                10px 5px 10px rgba(0,0,0,0.15);
-    border-left: 1px solid hsla(var(--hue-color), 10%, 15%);
+    box-shadow: -5px -5px 15px hsla(0, 0%, 0%, 0.1),
+                10px 5px 10px hsla(0, 0%, 0%, 0.1);
+    border-left: 1px solid hsla(var(--hue-color), 10%, 60%);
+    border-top: 1px solid hsla(var(--hue-color), 10%, 30%);
     border-bottom: 1px solid hsla(var(--hue-color), 10%, 15%);
-    border-top: 1px solid hsla(var(--hue-color), 10%, 9%);            
+    border-right: 1px solid hsla(var(--hue-color), 10%, 50%);
+               
 }
 
 .calculator span:active{
@@ -89,7 +112,7 @@ body{
 
 .calculator span i{
     position: relative;
-    font-size: var(--smaller-font-size);
+    font-size: var(--key-number-font-size);
     text-transform: uppercase;
 
 }
@@ -98,16 +121,37 @@ body{
     grid-column: span 2;
     width: 182px;
     background: #f00;
+    box-shadow: inset -8px 0 8px #480000 ,
+                inset 0 -8px 8px #480000 , 
+                0 0 0 2px hsla(var(--hue-color), 10%, 9%),
+                10px 20px 25px hsla(var(--hue-color), 10%, 10%); 
 } 
 
 .calculator .clear::before{
     background: linear-gradient(90deg, #d20000, #ffffff5c);
     border-left: 1px solid #fff4;
     border-bottom: 1px solid #fff4;
-    border-top: 1px solid #fff4;
+    border-top: 1px solid rgba(255, 255, 255, 0.137);
+    border-right: 1px solid rgba(255, 255, 255, 0.555);
 }
 
 .calculator .plus{
     grid-row: span 2;
     height: 180px;
+}
+
+.calculator .equal{
+    background: #2196f3;
+    box-shadow: inset -8px 0 8px #003561,
+                inset 0 -8px 8px #003561, 
+                0 0 0 2px hsla(var(--hue-color), 10%, 9%),
+                10px 20px 25px hsla(var(--hue-color), 10%, 10%);
+}
+
+.calculator .equal::before{
+    background: linear-gradient(90deg, #1479c9, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px #1479c9;
+    border-top: 1px #1479c9;
+    border-right: 1px #1479c9;
 }
