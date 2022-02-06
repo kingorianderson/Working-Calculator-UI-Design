@@ -1,6 +1,6 @@
 
 # Working-Calculator-UI-Design
-## Published at https://kingorianderson.github.io/Working-Calculator-UI-Design/
+## https://kingorianderson.github.io/Working-Calculator-UI-Design/
 - HTML CSS JavaScript
 - Working Calculator UI Design  
 - Claymorphism
